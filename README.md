@@ -5,17 +5,16 @@ Setup docker and docker-compose
 Build the images
 
 
- `
- cd docker_images/server/
+ `cd docker_images/server/`
  
- docker build -t meleeisland/llamagotchi-server .
+ `docker build -t meleeisland/llamagotchi-server .`
  
- cd ../web
+ `cd ../web`
  
- docker build -t meleeisland/llamagotchi-client .
+ `docker build -t meleeisland/llamagotchi-client .`
  
- cd ../../
- `
+ `cd ../../`
+ 
  
 Run the containers
 
