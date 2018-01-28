@@ -1,0 +1,23 @@
+version: '3'
+services:
+  mongo:
+    image: mongo
+    volumes:
+      - ./mongodb/llamadb/:/data/db
+  llamaserver:
+    image: meleeisland/llamagotchi-server
+    ports:
+      - 8082:8082
+    environment:
+      PORT: 8082
+      TICKS: 1
+      DELAY: 1
+  llamaweb:
+    image: meleeisland/llamagotchi-client
+    ports:
+      - 1337:1337
+    volumes:
+      - ./docker_images/web/src:/usr/src/app/src/
+      - ./docker_images/web/views:/usr/src/app/views/
+    environment:
+      PORT: 1337
